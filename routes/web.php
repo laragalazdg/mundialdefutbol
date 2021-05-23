@@ -26,5 +26,5 @@ Route::get('/', function () {
 // Resources::
 
 Route::resource('jugador', JugadorController::class);
-Route::resource('jugador', ClubController::class);
-Route::resource('jugador', PaisController::class);
+Route::resource('club', ClubController::class);
+Route::resource('pais', PaisController::class);
