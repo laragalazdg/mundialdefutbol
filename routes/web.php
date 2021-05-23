@@ -13,18 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('paises',[PaisController::class, 'index'])->name('paises.index');
+
+Route::get('paises/{pais}',[PaisController::class, 'show'])->name('paises.show');
+
+Route::get('clubes',[ClubController::class, 'index'])->name('clubes.index');
+
+Route::get('clubes/{club}',[ClubController::class, 'show'])->name('clubes.show');
+
 Route::get('/', function () {
-    return view('welcome');
-});
-
-
-/* Route::get('/cosito', function () {
-    return view('/cosito/cosito');
-}); */
-
-
-// Resources::
-
-Route::resource('jugador', JugadorController::class);
-Route::resource('jugador', ClubController::class);
-Route::resource('jugador', PaisController::class);
+    return view('home');
+})->name('home');
