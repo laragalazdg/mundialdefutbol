@@ -8,8 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Pais extends Model
 {
     use HasFactory;
+    
+    protected $table = 'pais';
 
-    protected $fillable = ['nombre'];
+    protected $primaryKey = 'idPais';
 
-    protected $hidden = ['idPais'];
+    protected $fillable = 'nombre';
+
+    protected $hidden = [
+        'created_at','updated_at'
+        ];
 }

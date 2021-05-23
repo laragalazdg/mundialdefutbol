@@ -9,6 +9,10 @@ class Jugador extends Model
 {
     use HasFactory;
 
+    protected $table = 'jugador';
+
+    protected $primaryKey = 'idJugador';
+
     protected $fillable = [
     'idClub',
     'idPais',
@@ -16,11 +20,11 @@ class Jugador extends Model
     'posicion'
     ];
 
-    protected $hidden = [
-    'idJugador'
-    ];
-
     protected $casts = [
     'fecha'
     ];
+
+    protected $hidden = [
+        'created_at','updated_at'
+        ];
 }
