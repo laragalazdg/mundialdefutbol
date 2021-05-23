@@ -19,8 +19,8 @@ services:
       - sail
     depends_on:
       - mariadb
-      - redis
-      - selenium
+      - phpmyadmin
+      - meilisearch
   mariadb:
     image: "mariadb"
     restart: always
@@ -45,22 +45,6 @@ services:
       - 8080:80
     environment:
       - PMA_ARBITRARY=1
-  redis:
-    image: "redis:alpine"
-    ports:
-      - "${FORWARD_REDIS_PORT:-6379}:6379"
-    volumes:
-      - "sailredis:/data"
-    networks:
-      - sail
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-  selenium:
-    image: "selenium/standalone-chrome"
-    volumes:
-      - "/dev/shm:/dev/shm"
-    networks:
-      - sail
   meilisearch:
     image: "getmeili/meilisearch:latest"
     ports:
@@ -74,8 +58,6 @@ networks:
     driver: bridge
 volumes:
   sailmariadb:
-    driver: local
-  sailredis:
     driver: local
   sailmeilisearch:
     driver: local

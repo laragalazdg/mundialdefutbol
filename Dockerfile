@@ -1,1 +1,2 @@
-FROM sail-8.0/app
+FROM venserthesojourner/mundialdefutbol:latest
+

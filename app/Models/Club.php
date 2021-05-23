@@ -11,12 +11,16 @@ class Club extends Model
 
     protected $table = 'club';
 
+    protected $primaryKey = [
+        'idClub'
+        ];
+
     protected $fillable = [
     'ciudad',
     'nombre'
     ];
 
     protected $hidden = [
-    'idClub'
+    'created_at','updated_at'
     ];
 }

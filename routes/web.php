@@ -18,9 +18,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/cosito', function () {
+/* Route::get('/cosito', function () {
     return view('/cosito/cosito');
-});
+}); */
 
 
 // Resources::
