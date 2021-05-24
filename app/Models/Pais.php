@@ -13,7 +13,7 @@ class Pais extends Model
 
     protected $primaryKey = 'idPais';
 
-    protected $fillable = 'nombre';
+    protected $fillable = ['nombre'];
 
     protected $hidden = [
         'created_at','updated_at'

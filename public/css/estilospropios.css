@@ -1,3 +1,11 @@
 body{
-    background-image: url(../img/mundial-futbol_0.webp);
+    background-image: url(../img/Mundial-Futbol.jpeg);
+    background-size: cover;
+   
+    
+}
+.menu_lateral, .contenido{
+   
+    background-color: rgba(99, 98, 92, 0.5); 
+    height: 800px;
 }
