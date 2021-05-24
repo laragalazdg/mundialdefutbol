@@ -21,6 +21,11 @@ class CreateJugadorTable extends Migration
             $table->unsignedBigInteger('idPais');
             $table->foreign('idClub')->references('idClub')->on('club');
             $table->foreign('idPais')->references('idPais')->on('pais');
+            $table->date('created_at');
+            $table->date('updated_at');
+            $table->engine='InnoDB';
+            $table->charset='latin1';
+            $table->collation='latin1_spanish_ci';
 
         });
     }

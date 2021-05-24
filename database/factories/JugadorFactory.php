@@ -2,17 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Pais;
+use App\Models\Jugador;
+use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class paisFactory extends Factory
+class jugadorFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Pais::class;
+    protected $model = Jugador::class;
 
     /**
      * Define the model's default state.
@@ -21,8 +22,12 @@ class paisFactory extends Factory
      */
     public function definition()
     {
+        $positions = array('Arquero','Delantero', 'Centro', 'Defensor');
         return [
             'nombre' => $this->faker->country(),
+            'posicion' => $this->faker->randomElement($positions),
+            'idClub' => $this->faker->numberBetween(1,100),
+            'idPais' => $this->faker->numberBetween(1,50),
         ];
     }
 }
