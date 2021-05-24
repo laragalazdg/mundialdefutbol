@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaisController;
 use App\Http\Controllers\ClubController;
-//use App\Http\Controllers\JugadorController;
-//use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
