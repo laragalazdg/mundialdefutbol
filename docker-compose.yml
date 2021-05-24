@@ -37,7 +37,7 @@ services:
     networks:
       - sail
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping"]
+      test: ["CMD", "mysqladmin","--user=${DB_USERNAME}","--password=${DB_PASSWORD}","ping"]
   phpmyadmin:
     image: phpmyadmin
     restart: always
