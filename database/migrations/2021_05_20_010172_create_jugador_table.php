@@ -15,8 +15,8 @@ class CreateJugadorTable extends Migration
     {
         Schema::create('jugador', function (Blueprint $table) {
             $table->id('idJugador');
-            $table->string('nombre');
-            $table->string('posicion');
+            $table->string('nombre', 50);
+            $table->string('posicion', 50);
             $table->unsignedBigInteger('idClub');
             $table->unsignedBigInteger('idPais');
             $table->foreign('idClub')->references('idClub')->on('club');

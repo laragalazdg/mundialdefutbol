@@ -1,2 +1,3 @@
 FROM venserthesojourner/mundialdefutbol:latest
 
+ADD file:d2abb0e4e7ac1773741f51f57d3a0b8ffc7907348842d773f8c341ba17f856d5 in /
