@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Club;
+use App\Models\Jugador;
+//use App\Models\Pais;
 class ClubController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class ClubController extends Controller
      */
     public function index()
     {
-        //
+        $clubes=Club::all();
+        return $clubes;
+        //return view('clubes.index',['clubes'=>$clubes]);
     }
 
     /**
@@ -45,7 +49,10 @@ class ClubController extends Controller
      */
     public function show($id)
     {
-        //
+        $jugadores=Jugador::where('idclub',$id)->get();
+        $posiciones=Jugador::select('posicion',Jugador::raw('count(*) as total'))->groupBy('posicion')->where('idclub',$id)->get();
+        return ['posiciones'=>$posiciones,'jugadores'=> $jugadores];
+       // return view('clubes.show',['posiciones'=>$posiciones,'jugadores'=> $jugadores]);
     }
 
     /**

@@ -15,9 +15,17 @@ class CreateClubTable extends Migration
     {
         Schema::create('club', function (Blueprint $table) {
             $table->id('idClub');
-            $table->string('nombre');
-            $table->string('cuidad');
 
+            $table->string('nombre');
+            $table->string('ciudad');
+
+            $table->string('nombre', 50);
+            $table->string('ciudad', 150);
+            $table->date('created_at');
+            $table->date('updated_at');
+            $table->engine='InnoDB';
+            $table->charset='latin1';
+            $table->collation='latin1_spanish_ci';
         });
     }
 

@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaisController;
 use App\Http\Controllers\ClubController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +24,9 @@ Route::get('clubes',[ClubController::class, 'index'])->name('clubes.index');
 
 Route::get('clubes/{club}',[ClubController::class, 'show'])->name('clubes.show');
 
+Route::resource('jugador', JugadorController::class);
+Route::resource('club', ClubController::class);
+Route::resource('pais', PaisController::class);
 Route::get('/', function () {
     return view('home');
 })->name('home');

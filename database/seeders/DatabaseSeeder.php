@@ -6,13 +6,15 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
+    
+     /* Seed the application's database.
      *
-     * @return void
-     */
+     * @return void*/
+    
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(paisSeeder::class);
+        $this->call(clubSeeder::class);
+        $this->call(jugadorSeeder::class);
     }
 }

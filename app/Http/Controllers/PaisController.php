@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pais;
+use App\Models\Jugador;
 
 class PaisController extends Controller
 {
@@ -13,7 +15,10 @@ class PaisController extends Controller
      */
     public function index()
     {
-        //
+
+        $paises=Pais::all();
+        return $paises;
+        //return view('paises.index', ['paises'=> $paises]);
     }
 
     /**
@@ -45,7 +50,9 @@ class PaisController extends Controller
      */
     public function show($id)
     {
-        //
+        $jugadores=Jugador::where('idpais',$id)->get();
+        return $jugadores;
+        //return view('paises.show', ['jugadores'=> $jugadores]);
     }
 
     /**

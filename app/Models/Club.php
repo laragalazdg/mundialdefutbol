@@ -11,9 +11,9 @@ class Club extends Model
 
     protected $table = 'club';
 
-    protected $primaryKey = [
+    protected $primaryKey = 
         'idClub'
-        ];
+        ;
 
     protected $fillable = [
     'ciudad',
